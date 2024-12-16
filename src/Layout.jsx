@@ -2,6 +2,7 @@ import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Button } from "./components/ui/button";
+import Left from "./modules/Left";
 import UserAvatar from "./user/UserAvater";
 const Layout = () => {
     const [collapsed, setCollapsed] = useState(false);
@@ -11,7 +12,7 @@ const Layout = () => {
                 className={`border-r border-gray-200 transition-all duration-300 ${collapsed ? "w-1/3" : "w-0"
                     }`}
             >
-                <h1 className="p-4 text-ellipsis flex justify-center text-2xl text-blue-500">Sidebar Content</h1>
+                {collapsed && <Left />}
             </div>
 
             {/* Main Content */}
